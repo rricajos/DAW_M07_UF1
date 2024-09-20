@@ -1,7 +1,7 @@
 <?php include 'include/header.php'; ?>
 
 /**
-Usa [] cuando crees arrays manualmente, ya que es más eficiente y moderno.
+Usa [] cuando crees arrays manualmente, ya que es más eficiente en rendimiento y moderno.
 Usa array() si necesitas compatibilidad con versiones de PHP más antiguas (pre PHP 5.4).
 Usa range() para generar arrays secuenciales de manera eficiente, especialmente cuando los valores siguen un patrón o secuencia clara.
 */
@@ -10,7 +10,7 @@ Usa range() para generar arrays secuenciales de manera eficiente, especialmente 
 $arr = [1, 2, 3, "patata"];
 
 // Array con range()
-$numeros = range(1, 10);
+$numeros = range(1, 100);
 
 // Array con array()
 $frutas = array("manzana", "plátano", "naranja");
