@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List - Cliente-Servidor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Contenedor principal de la aplicación -->
+  <div class="todo-container">
+
+    <h1>To-Do List (Cliente-Servidor)</h1>
+
+    <!-- Input para ingresar nuevas tareas -->
+    <input type="text" id="taskInput" placeholder="Nueva tarea">
+
+    <!-- Botón para agregar una nueva tarea -->
+    <button onclick="addTask()">Agregar</button>
+
+    <!-- Lista de tareas -->
+    <ul id="taskList"></ul>
+
+  </div>
+
+
+  <!-- Script que contiene la lógica de comunicación con el servidor -->
+  <script>
+
+    // Cuando la página termina de cargar, se ejecuta fetchTasks para cargar las tareas
+    document.addEventListener('DOMContentLoaded', fetchTasks);
+
+    // Función para obtener las tareas del servidor
+    function fetchTasks() {
+
+      fetch('tasks.php') // Hace una solicitud al servidor para obtener las tareas
+        .then(response => response.json()) // Convierte la respuesta en JSON
+        .then(tasks => {
+
+          const taskList = document.getElementById('taskList'); // Selecciona el contenedor de la lista de tareas
+          taskList.innerHTML = ''; // Limpia la lista
+
+          // Itera sobre las tareas recibidas y las muestra en la lista
+          tasks.forEach((task, index) => {
+            const li = document.createElement('li');
+            li.textContent = task;
+            li.appendChild(createDeleteButton(index)); // Añade el botón de eliminar a cada tarea
+            taskList.appendChild(li);
+          });
+        });
+    }
+
+    // Función para agregar una nueva tarea
+    function addTask() {
+
+      const taskInput = document.getElementById('taskInput'); // Obtiene el valor del input
+      
+      if (taskInput.value.trim() !== "") {
+
+        // Crea un objeto FormData para enviar la tarea
+        const formData = new FormData(); 
+        formData.append('task', taskInput.value);
+
+        // Envia la tarea al servidor usando una solicitud POST
+        fetch('tasks.php', {
+          method: 'POST',
+          body: formData
+
+        }).then(() => {
+
+          fetchTasks(); // Recarga la lista de tareas después de agregar una nueva
+          taskInput.value = ''; // Limpia el input
+        });
+      }
+    }
+
+    // Función para crear un botón de eliminar
+    function createDeleteButton(index) {
+
+      const deleteBtn = document.createElement('button'); // Crea un nuevo botón
+      deleteBtn.textContent = 'Eliminar';                 // Texto del botón
+
+      // Añade un evento 'click' para eliminar la tarea
+      deleteBtn.onclick = function () {
+
+        fetch('tasks.php?delete=' + index)  // Hace una solicitud para eliminar la tarea en el servidor
+          .then(() => fetchTasks());        // Recarga la lista de tareas después de eliminar
+      };
+      
+      return deleteBtn; // Retorna el botón para ser adjuntado a la tarea
+    }
+
+
+  </script>
+</body>
+
+</html>

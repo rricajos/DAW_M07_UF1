@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List - Cliente</title>
+  <link rel="stylesheet" href="style.css"> <!-- Vincula el archivo de estilos CSS -->
+</head>
+
+<body>
+  <!-- Contenedor principal de la aplicación -->
+  <div class="todo-container">
+
+    <h1>To-Do List (Cliente)</h1>
+
+    <!-- Input para ingresar nuevas tareas -->
+    <input type="text" id="taskInput" placeholder="Nueva tarea">
+
+    <!-- Botón para agregar una nueva tarea -->
+    <button onclick="addTask()">Agregar</button>
+
+    <!-- Lista de tareas -->
+    <ul id="taskList"></ul>
+
+  </div>
+
+
+  <!-- Script que contiene la lógica en JavaScript -->
+  <script>
+
+    // Función para agregar una nueva tarea a la lista
+    function addTask() {
+      
+      const taskInput = document.getElementById('taskInput'); // Obtiene el valor del input
+      const taskList = document.getElementById('taskList');   // Obtiene la lista donde se agregarán las tareas
+
+      // Verifica que el input no esté vacío
+      if (taskInput.value.trim() !== "") {
+        const li = document.createElement('li'); // Crea un nuevo elemento <li> para la tarea
+        li.textContent = taskInput.value;        // Asigna el texto de la tarea
+        li.appendChild(createDeleteButton());    // Agrega un botón de eliminar a la tarea
+        taskList.appendChild(li);                // Agrega el <li> a la lista de tareas
+        taskInput.value = '';                    // Limpia el input después de agregar la tarea
+      }
+    }
+
+    // Función para crear un botón de eliminar
+    function createDeleteButton() {
+
+      const deleteBtn = document.createElement('button'); // Crea un nuevo botón
+      deleteBtn.textContent = 'Eliminar';                 // Texto del botón
+      
+      // Añade un evento 'click' para eliminar la tarea
+      deleteBtn.onclick = function () {
+
+        const li = this.parentElement; // Selecciona el <li> (tarea) que contiene el botón
+        li.remove();                   // Elimina el <li> de la lista
+      };
+
+      return deleteBtn;  // Retorna el botón para ser adjuntado a la tarea
+    }
+
+  </script>
+</body>
+
+</html>
