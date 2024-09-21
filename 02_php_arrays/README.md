@@ -1,6 +1,6 @@
-# Comparación de Funciones de `array_diff` y `array_udiff`
+# Arrays PHP
 
-## array_diff() vs array_udiff & subfunciones
+## Comparación de Funciones y Subfucniones de `array_diff` y `array_udiff`
 
 Prácticamente utilizaremos `array_diff()` y `array_udiff()` con arrays **simples** o **indexadas**, es decir, arrays sin clave. En cambio, utilizaremos subfunciones como `array_diff_ukey()` o `array_udiff_assoc()` en **arrays asociativas**, es decir, arrays con clave.
 
@@ -20,4 +20,3 @@ Prácticamente utilizaremos `array_diff()` y `array_udiff()` con arrays **simple
 Las funciones de `array_diff` son útiles para comparaciones simples, mientras que las funciones de `array_udiff` ofrecen una flexibilidad adicional para personalizar cómo se comparan los valores y las claves. La elección de una u otra depende de si necesitas comparaciones estándar o personalizadas.
 
 La comparación estándar en PHP considera tanto el tipo como el valor. Por ejemplo, en una comparación estándar, el número entero 1 y la cadena de texto "1" se consideran diferentes porque tienen tipos distintos `1 : int != "1" : string`.
-
