@@ -12,7 +12,7 @@
 | `array_udiff_assoc()`     | Estándar              | Personalizable            | Sí               |
 | `array_udiff_uassoc()`    | Personalizable        | Personalizable            | Sí               |
 
-La comparación estándar en PHP considera tanto el tipo como el valor. Por ejemplo, en una comparación estándar, el número entero 1 y la cadena de texto "1" se consideran diferentes porque tienen tipos distintos.
+La comparación estándar en PHP considera tanto el tipo como el valor. Por ejemplo, en una comparación estándar, el número entero 1 y la cadena de texto "1" se consideran diferentes porque tienen tipos distintos `1 : int != "1" : string`.
 
 ## Conclusión
 
