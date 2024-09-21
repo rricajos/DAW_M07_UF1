@@ -23,15 +23,10 @@ Las funciones de `array_diff` son útiles para comparaciones simples, mientras q
 
 La comparación estándar en PHP considera tanto el tipo como el valor. Por ejemplo, en una comparación estándar, el número entero 1 y la cadena de texto "1" se consideran diferentes porque tienen tipos distintos `1 : int != "1" : string`.
 
-## `array_merge()` vs `array_combine()` vs `array_fill_keys()`
+## `array_diff` vs `array_intersect`
 
-Las funciones `array_merge()`, `array_combine()`, y `array_fill_keys()` tienen usos específicos en PHP para manejar arrays, pero sus objetivos y formas de combinar o crear arrays son diferentes. Mientras `array_merge()` se usa principalmente para combinar múltiples arrays en uno solo, `array_combine()` crea un array asociativo combinando claves y valores de dos arrays, y `array_fill_keys()` genera un array a partir de un conjunto de claves, rellenándolo con un valor común.
-
-| Función                | Claves             | Valores                         | Uso Principal                          |
-|------------------------|--------------------|----------------------------------|----------------------------------------|
-| `array_merge()`         | Sobrescribe claves coincidentes | Combina múltiples arrays | Combinar arrays, sobrescribiendo valores para claves coincidentes |
-| `array_combine()`       | Array de claves    | Array de valores                | Combina un array de claves con uno de valores, formando un array asociativo |
-| `array_fill_keys()`     | Define claves      | Usa un solo valor para todas las claves | Crea un array con un conjunto de claves, rellenando todas con el mismo valor |
+array_diff(): Devuelve los elementos que están solo en el primer array, excluyendo los que están en otros arrays.
+array_intersect(): Devuelve los elementos que están presentes en todos los arrays proporcionados.
 
 ## `array_intersect` vs `array_uintersect`
 
@@ -48,8 +43,6 @@ Las funciones `array_intersect` y `array_uintersect` en PHP permiten encontrar i
 | `array_uintersect_key()`       | Personalizable        | No                           | Sí                       |
 | `array_uintersect_uassoc()`    | Personalizable        | Personalizable               | Sí                       |
 
-### Explicación de las columnas
-
 - **Comparación de Claves**: Indica si las claves de los arrays son comparadas y si esa comparación es estándar o personalizable.
 - **Comparación de Valores**: Indica si los valores de los arrays son comparados y si esa comparación es estándar o personalizable.
 - **Personalización**: Indica si es posible personalizar la comparación mediante una función definida por el usuario.
@@ -65,4 +58,12 @@ Las funciones `array_intersect` y `array_uintersect` en PHP permiten encontrar i
 7. **`array_uintersect_key()`**: Compara solo las claves, permitiendo personalización en su comparación.
 8. **`array_uintersect_uassoc()`**: Compara tanto las claves como los valores, y permite personalización en ambos aspectos.
 
+## `array_merge()` vs `array_combine()` vs `array_fill_keys()`
 
+Las funciones `array_merge()`, `array_combine()`, y `array_fill_keys()` tienen usos específicos en PHP para manejar arrays, pero sus objetivos y formas de combinar o crear arrays son diferentes. Mientras `array_merge()` se usa principalmente para combinar múltiples arrays en uno solo, `array_combine()` crea un array asociativo combinando claves y valores de dos arrays, y `array_fill_keys()` genera un array a partir de un conjunto de claves, rellenándolo con un valor común.
+
+| Función                | Claves             | Valores                         | Uso Principal                          |
+|------------------------|--------------------|----------------------------------|----------------------------------------|
+| `array_merge()`         | Sobrescribe claves coincidentes | Combina múltiples arrays | Combinar arrays, sobrescribiendo valores para claves coincidentes |
+| `array_combine()`       | Array de claves    | Array de valores                | Combina un array de claves con uno de valores, formando un array asociativo |
+| `array_fill_keys()`     | Define claves      | Usa un solo valor para todas las claves | Crea un array con un conjunto de claves, rellenando todas con el mismo valor |
