@@ -15,3 +15,5 @@ try {
   echo "arr_values: " . print_r($values, true) . "\n";
   
 }
+
+?>
