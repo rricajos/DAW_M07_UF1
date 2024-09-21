@@ -1,6 +1,10 @@
 # Arrays PHP
 
-## Comparación de Funciones y Subfucniones de `array_diff` y `array_udiff`
+## Nota
+
+Las funciones que incluyen el prefijo `u` permiten proporcionar una función definida por el usuario para realizar comparaciones personalizadas. Estas funciones permiten mayor flexibilidad, por ejemplo, para realizar comparaciones insensibles a mayúsculas o comparar de una forma específica según las necesidades de la lógica del programa.
+
+## `array_diff` vs `array_udiff`
 
 Prácticamente utilizaremos `array_diff()` y `array_udiff()` con arrays **simples** o **indexadas**, es decir, arrays sin clave. En cambio, utilizaremos subfunciones como `array_diff_ukey()` o `array_udiff_assoc()` en **arrays asociativas**, es decir, arrays con clave.
 
@@ -15,13 +19,11 @@ Prácticamente utilizaremos `array_diff()` y `array_udiff()` con arrays **simple
 | `array_udiff_assoc()`       | Estándar              | Personalizable               | Sí                       |
 | `array_udiff_uassoc()`      | Personalizable        | Personalizable               | Sí                       |
 
-## Conclusión
-
 Las funciones de `array_diff` son útiles para comparaciones simples, mientras que las funciones de `array_udiff` ofrecen una flexibilidad adicional para personalizar cómo se comparan los valores y las claves. La elección de una u otra depende de si necesitas comparaciones estándar o personalizadas.
 
 La comparación estándar en PHP considera tanto el tipo como el valor. Por ejemplo, en una comparación estándar, el número entero 1 y la cadena de texto "1" se consideran diferentes porque tienen tipos distintos `1 : int != "1" : string`.
 
-## Comparación de `array_merge()`, `array_combine()` y `array_fill_keys()`
+## `array_merge()` vs `array_combine()` vs `array_fill_keys()`
 
 Las funciones `array_merge()`, `array_combine()`, y `array_fill_keys()` tienen usos específicos en PHP para manejar arrays, pero sus objetivos y formas de combinar o crear arrays son diferentes. Mientras `array_merge()` se usa principalmente para combinar múltiples arrays en uno solo, `array_combine()` crea un array asociativo combinando claves y valores de dos arrays, y `array_fill_keys()` genera un array a partir de un conjunto de claves, rellenándolo con un valor común.
 
@@ -31,7 +33,7 @@ Las funciones `array_merge()`, `array_combine()`, y `array_fill_keys()` tienen u
 | `array_combine()`       | Array de claves    | Array de valores                | Combina un array de claves con uno de valores, formando un array asociativo |
 | `array_fill_keys()`     | Define claves      | Usa un solo valor para todas las claves | Crea un array con un conjunto de claves, rellenando todas con el mismo valor |
 
-## Funciones de `array_intersect` y `array_uintersect` en PHP
+## `array_intersect` vs `array_uintersect`
 
 Las funciones `array_intersect` y `array_uintersect` en PHP permiten encontrar intersecciones entre arrays, es decir, valores o claves que están presentes en todos los arrays involucrados. Algunas de estas funciones permiten personalizar la comparación mediante funciones definidas por el usuario.
 
@@ -63,6 +65,4 @@ Las funciones `array_intersect` y `array_uintersect` en PHP permiten encontrar i
 7. **`array_uintersect_key()`**: Compara solo las claves, permitiendo personalización en su comparación.
 8. **`array_uintersect_uassoc()`**: Compara tanto las claves como los valores, y permite personalización en ambos aspectos.
 
-### Nota
 
-Las funciones que incluyen el prefijo `u` permiten proporcionar una función definida por el usuario para realizar comparaciones personalizadas. Estas funciones permiten mayor flexibilidad, por ejemplo, para realizar comparaciones insensibles a mayúsculas o comparar de una forma específica según las necesidades de la lógica del programa.
