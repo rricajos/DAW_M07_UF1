@@ -1,0 +1,150 @@
+/* eduFlow: estilos base. Mantener alineaciones segun esquema del enunciado. */
+/* eduflow/public/css/style.css */
+:root {
+  --gap: 16px;
+  --fg: #222;
+  --bg: #fff;
+  --acc: #4b7bec;
+  --err: #b00020;
+  --bg-base: #ffffff; /* blanco principal */
+  --bg-blue1: #eaf6ff; /* azul hielo */
+  --bg-blue2: #d9f0ff; /* azul cielo */
+  --bg-blue3: #bfe5ff; /* azul pastel */
+  --bg-yellow: #ffd900; /* amarillo crema */
+}
+.has-ambient-bg {
+  position: relative;
+  background: var(--bg-base);
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* blobs suaves difuminados */
+.has-ambient-bg::before {
+  content: "";
+  position: absolute;
+  inset: -30% -30%;
+  z-index: -1;
+  background: radial-gradient(
+      80% 40% at 70% 20%,
+      var(--bg-blue1),
+      transparent 80%
+    ),
+    radial-gradient(45% 40% at 20% 20%, var(--bg-blue2), transparent 80%),
+    radial-gradient(55% 50% at 80% 20%, var(--bg-blue3), transparent 80%),
+    radial-gradient(10% 10% at 30% 50%, var(--bg-yellow), transparent 90%);
+  filter: blur(196px) saturate(110%);
+  transform: translate(var(--bg-shift-x, 0), var(--bg-shift-y, 0));
+  transition: transform 0.25s ease-out;
+  opacity: 0.85;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif;
+  color: var(--fg);
+}
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.header {
+  background: var(--acc);
+  color: #fff;
+}
+.header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  padding: 12px 16px;
+}
+.header a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 12px;
+}
+h1 {
+  margin-top: 0;
+}
+label {
+  display: block;
+  margin-bottom: 12px;
+}
+input,
+select,
+button {
+  font: inherit;
+  padding: 8px 10px;
+}
+button,
+.btn {
+  background: var(--acc);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: inline-block;
+}
+.error {
+  color: var(--err);
+  display: block;
+  margin-top: 4px;
+}
+.auth {
+  max-width: 360px;
+}
+.confirm dt {
+  font-weight: 600;
+}
+.confirm dd {
+  margin: 0 0 8px 0;
+}
+.actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.table-wrap {
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.table td {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.table td.mono {
+  font-family: ui-monospace, monospace;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+form#formRole {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0;
+}

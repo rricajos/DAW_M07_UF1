@@ -1,0 +1,101 @@
+[
+    {
+        "id": "a1f9c3d4b672",
+        "first_name": "Laura",
+        "last_name": "Gómez Ruiz",
+        "age": 16,
+        "profile": "estudiante",
+        "password": "laura16",
+        "created_at": "2025-10-02T22:55:00+02:00"
+    },
+    {
+        "id": "b27e4f89c0d3",
+        "first_name": "Carlos",
+        "last_name": "Fernández López",
+        "age": 17,
+        "profile": "estudiante",
+        "password": "carlos17",
+        "created_at": "2025-10-02T22:55:00+02:00"
+    },
+    {
+        "id": "c3d5e7f1a982",
+        "first_name": "Marta",
+        "last_name": "Sánchez Ortega",
+        "age": 15,
+        "profile": "estudiante",
+        "password": "marta15",
+        "created_at": "2025-10-02T22:55:00+02:00"
+    },
+    {
+        "id": "d4e6f8a2b193",
+        "first_name": "Andrés",
+        "last_name": "Ramírez Torres",
+        "age": 18,
+        "profile": "admin",
+        "password": "andres18",
+        "created_at": "2025-10-02T22:55:00+02:00"
+    },
+    {
+        "id": "e5f7a9b3c204",
+        "first_name": "Sofía",
+        "last_name": "Morales Díaz",
+        "age": 17,
+        "profile": "estudiante",
+        "password": "sofia17",
+        "created_at": "2025-10-02T22:55:00+02:00"
+    },
+    {
+        "id": "f6a8b0c4d315",
+        "first_name": "Luis",
+        "last_name": "Martínez Vega",
+        "age": 38,
+        "profile": "admin",
+        "password": "luisprof",
+        "created_at": "2025-10-02T22:55:00+02:00"
+    },
+    {
+        "id": "a7b9c1d5e426",
+        "first_name": "Ana",
+        "last_name": "Castillo Navarro",
+        "age": 42,
+        "profile": "admin",
+        "password": "anaprof",
+        "created_at": "2025-10-02T22:55:00+02:00"
+    },
+    {
+        "id": "b8c0d2e6f537",
+        "first_name": "Marcos",
+        "last_name": "Domínguez Pérez",
+        "age": 45,
+        "profile": "profesor",
+        "password": "marcosprof",
+        "created_at": "2025-10-02T22:55:00+02:00"
+    },
+    {
+        "id": "c9d1e3f7a648",
+        "first_name": "Elena",
+        "last_name": "Rodríguez Martín",
+        "age": 34,
+        "profile": "admin",
+        "password": "elenaadmin",
+        "created_at": "2025-10-02T22:55:00+02:00"
+    },
+    {
+        "id": "d0e2f4a8b759",
+        "first_name": "Javier",
+        "last_name": "Alonso García",
+        "age": 39,
+        "profile": "admin",
+        "password": "javiadmin",
+        "created_at": "2025-10-02T22:55:00+02:00"
+    },
+    {
+        "id": "7d03425eab22",
+        "first_name": "Ricard",
+        "last_name": "Penin Honrubia",
+        "age": 23,
+        "profile": "estudiante",
+        "password": "12341234",
+        "created_at": "2025-10-02T23:06:53+02:00"
+    }
+]
